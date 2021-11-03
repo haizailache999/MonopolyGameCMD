@@ -5,9 +5,12 @@ import org.junit.jupiter.api.Test;
 
 // Tests for already-in-jail scenario should be done in GameTest
 public class JailSquareTest extends SquareTestBase {
+    private int squareIndex=6;
+    private String squareLabel = "IN JAIL";
     @Test
     @DisplayName("Should have no effect when player directly lands on this square")
     public void shouldHaveNoEffect() {
-
+        JailSquare jailSquare = new JailSquare(squareIndex,squareLabel);
+        verify(jailSquare).onEnter(game);
     }
 }
